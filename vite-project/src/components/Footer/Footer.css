@@ -1,5 +1,5 @@
 .footer {
-  font-family: "Cabinet Grotesk", sans-serif;
+  font-family: "CabinetGrotesk", Arial, sans-serif;
   color: #000;
   font-weight: 700;
   line-height: 20px;
@@ -18,7 +18,7 @@
 
 .footer__date {
   font-weight: 700;
-  font-family: "Cabinet Grotesk", sans-serif;
+  font-family: "CabinetGrotesk", Arial, sans-serif;
   font-size: 16px;
   line-height: 20px;
   color: #000;
