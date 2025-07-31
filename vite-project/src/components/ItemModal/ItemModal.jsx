@@ -1,7 +1,6 @@
 import "./ItemModal.css";
 import closebutton from "../../assets/closebutton.svg";
 import { useEffect } from "react";
-// import CurrentUserContext from "../../contexts/CurrentUserContext";
 
 function ItemModal({ activeModal, onClose, card }) {
   return (

@@ -1,4 +1,3 @@
-// import clear from "../../assets/day/clear.png";
 import "./WeatherCard.css";
 import { weatherOptions, defaultWeatherOption } from "../../utils/constants";
 
