@@ -1,12 +1,9 @@
 import "./ModalWithForm.css";
 import closebutton from "../../assets/closebutton.svg";
-import { useEffect } from "react";
 
-function ModalWithForm({ children, title, buttonText, activeModal, onClose }) {
+function ModalWithForm({ children, title, buttonText, isOpen, onClose }) {
   return (
-    <div
-      className={`modal ${activeModal === "add-garment" && "modal__opened"}`}
-    >
+    <div className={`modal ${isOpen ? "modal__opened" : ""}`}>
       <div className="modal__content">
         <h2 className="modal__title">{title}</h2>
         <button onClick={onClose} type="button" className="modal__close">
