@@ -1,18 +1,26 @@
 import "./ItemModal.css";
 import closebutton from "../../assets/closebutton.svg";
-import { useEffect } from "react";
+import { useContext } from "react";
 
-function ItemModal({ activeModal, onClose, card }) {
+function ItemModal({ activeModal, closeActiveModal, card, handleDelete }) {
   return (
     <div className={`modal ${activeModal === "preview" && "modal__opened"}`}>
       <div className="modal__content modal__content_type_image">
-        <button onClick={onClose} type="button" className="modal__close">
+        <button
+          onClick={closeActiveModal}
+          type="button"
+          className="modal__close"
+        >
           <img src={closebutton} alt="close icon" />
         </button>
-        <img src={card.link} alt={card.name} className="modal__image" />
+        <img src={card.imageUrl} alt={card.name} className="modal__image" />
         <div className="modal__footer">
           <h2 className="modal__caption">{card.name}</h2>
           <p className="modal__weather">Weather: {card.weather}</p>
+
+          <button className="modal__delete-button" onClick={handleDelete}>
+            Delete Item
+          </button>
         </div>
       </div>
     </div>

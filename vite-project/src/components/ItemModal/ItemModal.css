@@ -49,6 +49,22 @@
   margin: 12px 0 0;
 }
 
+.modal__delete-button {
+  position: absolute;
+  /* font-size: 20px; */
+  color: #ff4d00;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  width: 101px;
+  height: 24px;
+  left: 298px;
+  /* top: 24px; */
+  margin-left: 33.56px;
+  /* right: 32px; */
+  bottom: 40px;
+}
+
 @media screen and (max-width: 768px) {
   .modal__content.modal__content_type_image {
     width: 400px;
