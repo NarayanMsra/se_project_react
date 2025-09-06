@@ -2,19 +2,15 @@ import React from "react";
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
 import useForm from "../../hooks/useForm";
 
-const AddItemModal = ({ isOpen, onAddItem, closeActiveModal }) => {
-  const defaultValues = {
-    name: "",
-    link: "",
-    weather: "",
-  };
-
+const AddItemModal = ({ isOpen, onAddItem, closeActiveModal, onClose }) => {
+  const defaultValues = { name: "", link: "", weather: "" };
   const { values, handleChange, setValues } = useForm(defaultValues);
 
   const handleSubmit = (e) => {
     e.preventDefault();
     onAddItem(values);
     setValues(defaultValues);
+    if (typeof handleClose === "function") handleClose();
   };
 
   return (
@@ -25,7 +21,6 @@ const AddItemModal = ({ isOpen, onAddItem, closeActiveModal }) => {
       closeActiveModal={closeActiveModal}
       onSubmit={handleSubmit}
     >
-      {/* Name Input */}
       <label htmlFor="name" className="modal__label">
         Name
         <input
@@ -42,7 +37,6 @@ const AddItemModal = ({ isOpen, onAddItem, closeActiveModal }) => {
         />
       </label>
 
-      {/* Image URL */}
       <label htmlFor="imageUrl" className="modal__label">
         Image
         <input
@@ -53,11 +47,10 @@ const AddItemModal = ({ isOpen, onAddItem, closeActiveModal }) => {
           placeholder="Image URL"
           required
           onChange={handleChange}
-          value={values.imageUrl}
+          value={values.link}
         />
       </label>
 
-      {/* Weather Radios */}
       <fieldset className="modal__radio-buttons">
         <legend className="modal__legend">Select the weather type:</legend>
 

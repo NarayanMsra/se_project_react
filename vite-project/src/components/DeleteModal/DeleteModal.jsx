@@ -6,7 +6,6 @@ const DeleteModal = ({
   closeActiveModal,
   handleDeleteCard,
   card,
-  
 }) => {
   if (activeModal !== "delete-modal") return null;
   const onCardDelete = () => {
@@ -35,7 +34,7 @@ const DeleteModal = ({
             Yes, delete item
           </button>
           <button className="delete__cancel_modal" onClick={closeActiveModal}>
-            Cancle
+            Cancel
           </button>
         </div>
       </div>

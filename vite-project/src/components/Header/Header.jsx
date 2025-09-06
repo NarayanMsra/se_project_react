@@ -1,4 +1,3 @@
-// import { useState } from "react";
 import "./Header.css";
 import logo from "../../assets/logo.svg";
 import avatar from "../../assets/Avatar.png";
@@ -32,7 +31,7 @@ function Header({ handleAddClick, weatherData, ToggleSwitch }) {
         >
           + Add clothes
         </button>
-        <Link to="/profile" className="heder__link">
+        <Link to="/profile" className="header__link">
           <div className="header__user-container">
             <p className="header__userName">Narayan Mishra</p>
 

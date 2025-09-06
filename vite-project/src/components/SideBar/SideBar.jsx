@@ -1,4 +1,3 @@
-// import { useContext } from "react";
 import "./SideBar.css";
 import avatar from "../../assets/Avatar.png";
 const SideBar = () => {
