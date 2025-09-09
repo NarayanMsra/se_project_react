@@ -11,13 +11,13 @@ export const getItems = () => {
   return fetch(`${baseUrl}/items`).then(checkResponse);
 };
 
-export const addItem = ({ name, link, weather }) => {
+export const addItem = (cardData) => {
   return fetch(`${baseUrl}/items`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
     },
-    body: JSON.stringify({ name, link, weather }),
+    body: JSON.stringify(cardData),
   }).then(checkResponse);
 };
 

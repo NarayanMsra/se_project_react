@@ -2,15 +2,13 @@ import React from "react";
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
 import useForm from "../../hooks/useForm";
 
-const AddItemModal = ({ isOpen, onAddItem, closeActiveModal, onClose }) => {
+const AddItemModal = ({ isOpen, onAddItem, closeActiveModal }) => {
   const defaultValues = { name: "", link: "", weather: "" };
   const { values, handleChange, setValues } = useForm(defaultValues);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    onAddItem(values);
-    setValues(defaultValues);
-    if (typeof handleClose === "function") handleClose();
+    onAddItem(values); //parent handles API + closing modal
   };
 
   return (
@@ -21,7 +19,7 @@ const AddItemModal = ({ isOpen, onAddItem, closeActiveModal, onClose }) => {
       closeActiveModal={closeActiveModal}
       onSubmit={handleSubmit}
     >
-      <label htmlFor="name" className="modal__label">
+      <label className="modal__label">
         Name
         <input
           type="text"
@@ -37,7 +35,7 @@ const AddItemModal = ({ isOpen, onAddItem, closeActiveModal, onClose }) => {
         />
       </label>
 
-      <label htmlFor="imageUrl" className="modal__label">
+      <label className="modal__label">
         Image
         <input
           type="url"
@@ -54,7 +52,7 @@ const AddItemModal = ({ isOpen, onAddItem, closeActiveModal, onClose }) => {
       <fieldset className="modal__radio-buttons">
         <legend className="modal__legend">Select the weather type:</legend>
 
-        <label htmlFor="hot" className="modal__label modal__label_type_radio">
+        <label className="modal__label modal__label_type_radio">
           <input
             id="hot"
             type="radio"
@@ -67,7 +65,7 @@ const AddItemModal = ({ isOpen, onAddItem, closeActiveModal, onClose }) => {
           Hot
         </label>
 
-        <label htmlFor="warm" className="modal__label modal__label_type_radio">
+        <label className="modal__label modal__label_type_radio">
           <input
             id="warm"
             type="radio"
@@ -80,7 +78,7 @@ const AddItemModal = ({ isOpen, onAddItem, closeActiveModal, onClose }) => {
           Warm
         </label>
 
-        <label htmlFor="cold" className="modal__label modal__label_type_radio">
+        <label className="modal__label modal__label_type_radio">
           <input
             id="cold"
             type="radio"

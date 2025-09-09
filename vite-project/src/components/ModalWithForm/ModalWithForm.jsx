@@ -1,7 +1,8 @@
 import "./ModalWithForm.css";
 import closebutton from "../../assets/closebutton.svg";
+import useModalClose from "../../hooks/useModalClose";
 
-function ModalWithForm({
+const ModalWithForm = ({
   children,
   name,
   title,
@@ -9,7 +10,9 @@ function ModalWithForm({
   isOpen,
   closeActiveModal,
   onSubmit,
-}) {
+  isLoading = false,
+}) => {
+  useModalClose(isOpen, closeActiveModal);
   return (
     <div className={`modal ${isOpen ? "modal__opened" : ""}`}>
       <div className="modal__content">
@@ -23,13 +26,13 @@ function ModalWithForm({
         </button>
         <form onSubmit={onSubmit} className="modal__form" name={name}>
           {children}
-          <button type="submit" className="modal__submit">
-            {buttonText}
+          <button type="submit" className="modal__submit" disabled={isLoading}>
+            {isLoading ? "Saving..." : buttonText}
           </button>
         </form>
       </div>
     </div>
   );
-}
+};
 
 export default ModalWithForm;

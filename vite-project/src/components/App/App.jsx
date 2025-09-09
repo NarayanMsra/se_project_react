@@ -30,6 +30,8 @@ const App = () => {
   const [currentTemperatureUnit, setCurrentTemperatureUnit] = useState("F");
   const [currentUser, setCurrentUser] = useState(null);
 
+  const [isLoading, setIsLoading] = useState(false);
+
   const handleCardClick = (card) => {
     setActiveModal("preview");
     setSelectedCard(card);
@@ -38,9 +40,11 @@ const App = () => {
   const onAddItem = (inputValues) => {
     const newCardData = {
       name: inputValues.name,
-      link: inputValues.link,
+      imageUrl: inputValues.link,
       weather: inputValues.weather,
     };
+
+    setIsLoading(true);
 
     addItem(newCardData)
       .then((createdItem) => {
@@ -49,7 +53,8 @@ const App = () => {
       })
       .catch((err) => {
         console.error("Failed to add item:", err);
-      });
+      })
+      .finally(() => setIsLoading(false));
   };
 
   const handleDeleteCard = (card) => {
@@ -62,7 +67,8 @@ const App = () => {
       })
       .catch((err) => {
         console.error("Failed to delete item:", err);
-      });
+      })
+      .finally(() => setIsLoading(false));
   };
 
   const handleAddClick = () => setActiveModal("add-garment");
@@ -137,6 +143,7 @@ const App = () => {
             closeActiveModal={closeModal}
             onAddItem={onAddItem}
             currentWeatherType={weatherData.type}
+            buttomText={isLoading ? "Saving..." : "Save"}
           />
 
           <ItemModal

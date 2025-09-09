@@ -1,0 +1,40 @@
+.cloths__section > div {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 20px;
+  /* height: 25px;
+  width: 157px; */
+}
+
+.cloths__section p {
+  font-family: "CabinetGrotesk", Arial, sans-serif;
+  /* width: 94px; */
+  color: rgba(0, 0, 0, 1);
+  height: 25px;
+  line-height: 100%;
+  font-weight: 700;
+  font-size: 20px;
+}
+
+.cloths__section_button {
+  font-family: "CabinetGrotesk", Arial, sans-serif;
+  font-weight: 700;
+  background-color: transparent;
+  border: none;
+  color: rgba(0, 0, 0, 0.6);
+  cursor: pointer;
+}
+
+.cloths-section__items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.cloths-section__items:hover {
+  opacity: 0.6;
+}

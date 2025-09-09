@@ -1,0 +1,36 @@
+.card {
+  width: 323px;
+  height: 328px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.card__name {
+  margin: 0;
+  border-radius: 4px;
+  padding: 2px 12px;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: 0%;
+  display: flex;
+  flex-flow: horizontal;
+  position: absolute;
+  background-color: #fff;
+  color: rgba(0, 0, 0, 0.6);
+  top: 15px;
+  font-family: "CabinetGrotesk", Arial, sans-serif;
+  margin-left: 125px;
+}
+
+.card__image {
+  border-radius: 20px;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  width: 325px;
+  height: 328px;
+}
+
+.card__like-hidden {
+  display: none;
+}

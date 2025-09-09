@@ -1,10 +1,13 @@
 import "./ItemModal.css";
 import closebutton from "../../assets/closebutton.svg";
-import { useContext } from "react";
+import useModalClose from "../../hooks/useModalClose";
 
-function ItemModal({ activeModal, closeActiveModal, card, handleDelete }) {
+const ItemModal = ({ activeModal, closeActiveModal, card, handleDelete }) => {
+  const isOpen = activeModal === "preview";
+  useModalClose(isOpen, closeActiveModal);
+
   return (
-    <div className={`modal ${activeModal === "preview" && "modal__opened"}`}>
+    <div className={`modal ${isOpen ? "modal__opened" : ""}`}>
       <div className="modal__content modal__content_type_image">
         <button
           onClick={closeActiveModal}
@@ -25,6 +28,6 @@ function ItemModal({ activeModal, closeActiveModal, card, handleDelete }) {
       </div>
     </div>
   );
-}
+};
 
 export default ItemModal;
